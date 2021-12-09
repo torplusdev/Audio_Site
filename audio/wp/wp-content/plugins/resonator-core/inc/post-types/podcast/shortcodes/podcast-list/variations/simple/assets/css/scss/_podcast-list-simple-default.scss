@@ -1,0 +1,139 @@
+/* ==========================================================================
+   Blog List Simple styles
+   ========================================================================== */
+
+.qodef-podcast-list {
+	
+	&.qodef-item-layout--simple {
+		
+		article {
+			
+			.qodef-e-inner {
+				@include qodefSquareShadowStyles();
+
+				.qodef-e-content {
+					position: relative;
+					display: flex;
+					padding: 18px 40px;
+
+					@include qodefScreenSize680 {
+						padding: 18px 20px;
+					}
+
+					> * {
+						display: flex;
+						align-items: center;
+						
+						&:first-child {
+							position: relative;
+							flex: 0 0 60%;
+							height: 66px;
+							justify-content: flex-start;
+
+							@include qodefScreenSize680 {
+								height: auto;
+							}
+						}
+
+						&:last-child {
+							flex: 0 0 40%;
+							justify-content: space-between;
+						}
+					}
+
+					.qodef-m-player-box {
+						width: 66px;
+						
+						.mejs-controls {
+							
+							.mejs-playpause-button {
+								
+								button {
+									margin-right: 0;
+								}
+							}
+							
+							> *:not(.mejs-playpause-button) {
+								display: none;
+							}
+						}
+					}
+
+					.qodef-m-play {
+						width: 66px;
+						height: 66px;
+						flex: 0 0 66px;
+						border: 2px solid #cecece;
+						line-height: 66px;
+						border-radius: 100%;
+						cursor: pointer;
+						@include qodefPlayBtnAnimation();
+
+						@include qodefScreenSize680 {
+							position: relative;
+							top: -11px;
+						}
+
+						&:after {
+							content: url("../../../../themes/resonator/assets/img/play.svg");
+							margin: 0 auto;
+							display: block;
+							width: 11px;
+							left: 2px;
+							position: relative;
+						}
+					}
+					
+					.qodef-e-title {
+						margin-left: 28px;
+					}
+					
+					.qodef-e-episode-number,
+					.qodef-e-category {
+						color: #8e8b8c;
+						font-size: 14px;
+					}
+
+					.qodef-e-category {
+
+						&:hover {
+							color: $category-hover-color;
+						}
+					}
+
+					.qodef-e-info-date {
+						span:first-child {
+							display: block;
+							font-family: $heading-font;
+							font-size: 52px;
+							line-height: 1em;
+							color: $main-color;
+							margin-bottom: 10px;
+						}
+					}
+				}
+			}
+		}
+		
+		&:not(.qodef-col-num--1) {
+			
+			article {
+				
+				.qodef-e-content {
+					flex-wrap: wrap;
+					
+					> * {
+						
+						&:first-child {
+							flex: 0 0 100%;
+						}
+						&:last-child {
+							flex: 0 0 100%;
+							padding: 20px 0 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}

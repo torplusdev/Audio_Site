@@ -1,0 +1,50 @@
+@media only screen and (max-width: $screen-size-768) {
+	
+	.qodef-podcast-list {
+		
+		&.qodef_additional_top_margin {
+			
+			article {
+				
+				&:nth-of-type(2n),
+				&:nth-of-type(2n+1) {
+					margin-top: 20px !important;
+					padding: 0 20px !important;
+					margin-bottom: 50px !important;
+				}
+			}
+		}
+
+		&.qodef-item-layout--info-below {
+
+			&.qodef-pl-two-cols-custom-padding {
+
+				@include qodefScreenSize680 {
+
+					.qodef-e-title {
+						font-size: 27px;
+						line-height: 1.26em;
+					}
+				}
+			}
+		}
+	}
+}
+
+@include qodefScreenSize680 {
+
+	.qodef-podcast-list {
+
+		&.qodef_additional_top_margin {
+
+			article {
+
+				&:nth-of-type(2n),
+				&:nth-of-type(2n+1) {
+					padding: 0 !important;
+					margin-bottom: 20px !important;
+				}
+			}
+		}
+	}
+}

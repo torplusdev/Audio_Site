@@ -1,0 +1,110 @@
+/* ==========================================================================
+   Global styles
+   ========================================================================== */
+
+.resonator-core-page-inline-style {
+	position: absolute !important;
+	width: 0;
+	height: 0;
+	line-height: 1;
+	display: none;
+}
+
+//mejs control
+.mejs-button {
+
+	&.mejs-replay {
+
+		> button {
+
+			&:before {
+				content: "\f49c";
+			}
+		}
+	}
+}
+
+// custom css classes
+.qodef-landing-footer {
+	color: #ffffff;
+	font-size: 60px;
+	margin-bottom: 25px;
+}
+
+//custom class responsive 1280
+
+@media only screen and (min-width: 1280px) and (max-width: 1280px) {
+
+	.qodef-custom-padding-1280 {
+
+		.elementor-container {
+			padding: 0 70px;
+		}
+	}
+
+}
+
+@media only screen and (min-width: 1280px) and (max-width: 1440px) {
+
+	.qodef-responsive-width-360 {
+
+		> .elementor-column-wrap > .elementor-widget-wrap {
+
+			> .elementor-element {
+				width: 360px!important;
+			}
+		}
+	}
+}
+
+//blockquote responsive style
+@include qodefScreenSize1024 {
+
+	blockquote {
+		padding: 14px 0 11px 8.4%;
+	}
+}
+
+@include qodefScreenSize768 {
+
+	blockquote {
+		padding: 14px 0 11px 9.4%;
+	}
+}
+
+@include qodefScreenSize680 {
+
+	blockquote {
+		padding-left: 0;
+		padding-top: 90px;
+
+		&:before {
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
+
+	//custom mobile extended grid
+	.qodef-custom-mobile-extended-grid {
+
+		> .elementor-container {
+			padding-left: 0!important;
+		}
+	}
+
+	//swiper override visibility
+	.qodef-custom-swiper-visible {
+
+		.qodef-podcast-season-list {
+
+			&.qodef-swiper-container {
+				overflow: visible!important;
+			}
+		}
+	}
+}
+
+//custom box shadow
+.qodef-custom-box-shadow {
+	box-shadow: 0 0 25px 0 rgba(0, 0, 0, .08%);
+}

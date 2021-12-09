@@ -1,0 +1,11 @@
+/* ==========================================================================
+   Single Images shortcode styles
+   ========================================================================== */
+
+.qodef-single-image {
+
+	img {
+		display: block;
+		@include qodefSquareShadowStyles(!important);
+	}
+}

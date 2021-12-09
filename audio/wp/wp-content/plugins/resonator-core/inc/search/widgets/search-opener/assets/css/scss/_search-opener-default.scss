@@ -1,0 +1,43 @@
+/* ==========================================================================
+# Search opener - begin
+========================================================================== */
+
+.qodef-search-opener {
+    
+    > * {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        line-height: inherit;
+    }
+
+    .qodef-search-opener-text {
+        margin-left: 6px;
+    }
+    
+    &.qodef-source--icon-pack {
+        @include qodefMenuLevelOneInitialStyle('h6');
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+    }
+
+    &.qodef-source--custom-predefined {
+        @include qodefMenuLevelOneInitialStyle('h6');
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+
+        .qodef-m-icon {
+            line-height: 1;
+        }
+
+        svg {
+            color: currentColor;
+        }
+    }
+}
+
+/* ==========================================================================
+# Search opener - end
+========================================================================== */

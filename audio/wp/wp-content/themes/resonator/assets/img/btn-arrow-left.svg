@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="19.2px" height="12.7px" viewBox="0 0 19.2 12.7" style="enable-background:new 0 0 19.2 12.7;fill: none;stroke: currentColor;" xml:space="preserve">
+	<g>
+		<g>
+			<line x1="1.2" y1="6.4" x2="19.2" y2="6.4"/>
+		</g>
+		<path d="M6.2,12.2"/>
+		<polyline points="6.7,12.4 0.7,6.4 6.7,0.4 	"/>
+	</g>
+</svg>

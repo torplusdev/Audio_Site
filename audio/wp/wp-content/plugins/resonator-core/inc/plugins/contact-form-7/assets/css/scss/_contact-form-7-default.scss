@@ -1,0 +1,63 @@
+.wpcf7 {
+    
+    label {
+        color: #8e8b8c;
+        margin-left: 10px;
+        padding: 5px 0;
+        
+        textarea {
+            margin-top: 16px;
+        }
+    }
+    
+    button[type=submit] span {
+        display: inline;
+    }
+
+    &-response-output {
+        margin: 2em 0 0 0 !important;
+    }
+
+    .ajax-loader {
+        background-image: none !important;
+        border: 2px solid #e6e6e6 !important;
+        border-top: 2px solid $main-color !important;
+        border-radius: 50%;
+        width: 23px !important;
+        height: 23px !important;
+        margin: 0 0 0 12px !important;
+        animation: qode-rotate 2s linear infinite;
+    }
+}
+
+.qodef-contact-us {
+
+    input, textarea {
+        font-size: 17px;
+        letter-spacing: 0;
+        color: #8e8b8c;
+        margin: 0 0 14px;
+        padding: 20px 5px 12px;
+
+        &:focus, &::placeholder {
+            font-size: 17px;
+            letter-spacing: 0;
+            color: #8e8b8c;
+        }
+    }
+
+    textarea {
+        margin-top: 12px!important;
+        padding-top: 5px;
+    }
+
+    label {
+        margin: 12px 0 0!important;
+    }
+
+    .qodef-label-message {
+        padding-left: 5px;
+        position: relative;
+        top: 1px;
+    }
+}

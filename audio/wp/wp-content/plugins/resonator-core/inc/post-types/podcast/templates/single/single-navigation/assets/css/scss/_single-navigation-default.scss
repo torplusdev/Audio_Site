@@ -1,0 +1,245 @@
+/* ==========================================================================
+   Single Post Navigation styles
+   ========================================================================== */
+
+#qodef-single-podcast-navigation {
+	@include qodefRelativeLayout();
+	margin: 65px 0 0;
+	background-color: #f8f8f8;
+
+	.qodef-m-inner {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 100px 0;
+		
+		@include qodefScreenSize680 {
+			display: block;
+		}
+	}
+	
+	.qodef-podcast-item {
+		display: flex;
+		flex: 0 0 50%;
+
+		/* js generated class */
+		&.qodef-hovered {
+
+			.qodef-e-media-image {
+
+				img {
+					transform: $img-zoom-transform;
+				}
+			}
+		}
+		
+		@include qodefScreenSize680 {
+			display: block;
+			flex: 0 0 100%;
+		}
+
+		.qodef-e-media-image {
+			display: flex;
+			flex: 0 0 43.9%;
+			position: relative;
+			@include qodefSquareShadowStyles();
+			overflow: hidden;
+
+			img {
+				display: block;
+				transition: $img-zoom-transition;
+			}
+
+			&:hover {
+
+				img {
+					transform: $img-zoom-transform;
+				}
+			}
+		}
+		
+		&.qodef-nav-prev {
+			position: absolute;
+			top: 100px;
+			right: 0;
+			z-index: -1;
+			
+			.qodef-e-media-image {
+				right: calc(-100% - 22%);
+				
+				a {
+					position: relative;
+					right: 0;
+				}
+			}
+		}
+		
+		.qodef-e-media-icon {
+			position: absolute;
+			right: 15px;
+			top: 15px;
+			background-color: white;
+			width: 25px;
+			text-align: center;
+			border-radius: 5px;
+			z-index: 50;
+		}
+		
+		.qodef-e-content {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			flex: 0 0 80%;
+			margin-left: 60px;
+			z-index: 50;
+
+			@include qodefScreenSize680 {
+				margin-left: 0;
+				margin-top: 15px;
+			}
+			
+			.qodef-next-text {
+				font-family: $heading-font;
+				color: #8e8b8c;
+				font-size: 18px;
+				font-weight: 600;
+			}
+			
+			.qodef-e-title {
+				margin: 18px 0 8px;
+
+				@include qodefScreenSize768 {
+					@include qodefHeadingStyle(h4);
+				}
+
+				.qodef-e-title-link {
+					@include qodefUnderline();
+				}
+
+				@include qodefScreenSize680 {
+					margin-top: 1px;
+				}
+			}
+			
+			.qodef-e-info {
+				display: flex;
+				color: #8e8b8c;
+				font-size: 14px;
+				
+				.qodef-e-info-category {
+					display: inline;
+					
+					a {
+						color: #8e8b8c;
+						
+						&:hover {
+							color: $category-hover-color;
+						}
+					}
+					
+					a:not(:last-child) {
+						
+						&:after {
+							content: '•';
+						}
+					}
+				}
+				
+				div:not(:last-child) {
+					
+					&:after {
+						content: '•';
+						margin-right: 5px;
+					}
+				}
+			}
+		}
+	}
+	
+	.qodef-m-nav-holder {
+		z-index: 10;
+		display: flex;
+		flex-direction: row-reverse;
+
+		@include qodefScreenSize680 {
+			justify-content: flex-end;
+			margin-top: 57px;
+		}
+		
+		&.qodef-m-nav-last-post {
+			width: 100%;
+			align-items: center;
+			
+			.qodef-nav-prev {
+				position: relative;
+				top: 0;
+				
+				.qodef-e-media-image {
+					
+					a {
+						right: -80%;
+					}
+				}
+			}
+			
+			.qodef--prev {
+				height: 35px;
+			}
+		}
+	}
+
+	.qodef-m-nav {
+		position: relative;
+		display: flex;
+		align-items: center;
+		
+		> * {
+			display: block;
+			line-height: inherit;
+		}
+		
+		&.qodef--prev {
+			padding-right: 15px;
+			border-right: 1px solid #8e8b8c;
+			color: #8e8b8c;
+			
+			.qodef-m-nav-icon {
+				margin-right: 10px;
+			}
+
+			&:hover {
+				.qodef-m-nav-icon {
+					transform: translateX(-2px);
+				}
+			}
+		}
+		
+		&.qodef--next {
+			flex-direction: row-reverse;
+			text-align: right;
+			margin-left: 15px;
+			
+			.qodef-m-nav-icon {
+				margin-left: 10px;
+			}
+
+			&:hover {
+				.qodef-m-nav-icon {
+					transform: translateX(2px);
+				}
+			}
+		}
+	}
+	
+	.qodef-m-nav-icon {
+		font-size: 30px;
+		display: inline-block;
+		transition: .3s cubic-bezier(0.1, 0.56, 0.25, 1);
+		will-change: transform;
+	}
+	
+	.qodef-m-nav-label {
+		@include qodefHeadingStyle(h6, false);
+	}
+}

@@ -1,0 +1,258 @@
+/* ==========================================================================
+   Podcast List shortcode styles
+   ========================================================================== */
+
+.qodef-podcast-list {
+
+	&.qodef-layout--columns {
+
+		&.qodef--has-appear {
+
+			* {
+				backface-visibility: hidden;
+			}
+
+			.podcast-item {
+				opacity: 0;
+				visibility: hidden;
+				transform: translateY(5%);
+				transition: .6s cubic-bezier(.3,.85,.41,.81);
+				will-change: transform;
+				transition-delay: 1.45s;
+
+				/* every 3rd and one before */
+				&:nth-child(3n),
+				&:nth-child(3n-1) {
+					transition-delay: 1.60s;
+				}
+			}
+
+			&.qodef--appeared {
+
+				.podcast-item {
+					opacity: 1;
+					visibility: visible;
+					transform: translateY(0);
+				}
+			}
+		}
+	}
+
+	.podcast-item {
+
+		/* js generated class */
+		&.qodef-hovered {
+
+			.qodef-e-image {
+
+				.qodef-e-media-image {
+
+					img {
+						transform: $img-zoom-transform;
+					}
+				}
+			}
+		}
+	}
+	
+	.qodef-e-inner {
+		position: relative;
+	}
+	
+	.qodef-e-image {
+		
+		.qodef-e-media-icon {
+			position: absolute;
+			right: 0;
+			top: 0;
+			background-color: #fff;
+			transform: translateX(-10px) translateY(10px);
+			border-radius: 10px;
+			width: 45px;
+			height: 45px;
+			line-height: 45px;
+			text-align: center;
+			font-size: 22px;
+			z-index: 50;
+		}
+		
+		img {
+			display: block;
+		}
+
+		.qodef-e-media-image {
+			overflow: hidden;
+
+			img {
+				transition: $img-zoom-transition;
+			}
+		}
+
+		&:hover {
+
+			.qodef-e-media-image {
+
+				img {
+					transform: $img-zoom-transform;
+				}
+			}
+		}
+	}
+	
+	.qodef-info-top {
+		
+		a {
+			color: #8e8b8c;
+			display: inline;
+
+			&:hover {
+				color: $category-hover-color;
+			}
+		}
+	}
+	
+	.qodef-e-info-category {
+		display: inline;
+		
+		a:not(:last-child) {
+			
+			&:after {
+				content: '•';
+			}
+		}
+	}
+	
+	.qodef-e-title {
+		margin: 0;
+	}
+
+	.qodef-e-title-link {
+		@include qodefUnderline();
+	}
+	
+	.qodef-m-pagination {
+		margin-top: 35px;
+
+		&.qodef--load-more {
+
+			.qodef-m-pagination-inner {
+
+				.qodef-load-more-button {
+					
+					.qodef-m-text {
+						margin-right: 0;
+						
+						&:after {
+							content: '';
+							display: inline-block;
+							width: 100%;
+							height: 1px;
+							bottom: 5px;
+							background: #000;
+							position: absolute;
+							left: 0;
+						}
+					}
+
+					svg {
+						display: none;
+					}
+
+					&:hover {
+						color: $heading-color;
+
+						.qodef-m-text {
+
+							&:after {
+								background: $heading-color;
+								animation: qodef-animate-read-more .8s cubic-bezier(.85,.26,.17,1) forwards;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	.qodef-e-excerpt {
+		
+		&:after {
+			content: "...";
+			margin-left: 3px;
+		}
+	}
+	
+	&.qodef-items--fixed {
+		
+		.qodef-e-image {
+			//because of the custom padding around item
+			height: 100%;
+			overflow: hidden;
+		}
+		
+		.qodef-e-media-image {
+			height: 100%;
+			
+			a {
+				@include qodefRelativeLayout();
+				height: 100%;
+			}
+		}
+	}
+	
+	&.qodef_additional_top_margin {
+		display: block;
+		
+		.qodef-grid-inner {
+			margin: 0;
+			
+			.qodef-grid-item {
+				margin-bottom: 20px;
+			}
+		}
+		
+		article {
+			
+			&:nth-of-type(2n) {
+				margin-top: 130px !important;
+				padding: 0 0 0 80px !important;
+			}
+			
+			&:nth-of-type(2n+1) {
+				padding: 0 80px 0 0 !important;
+			}
+		}
+	}
+	
+	&.qodef-swiper-container{
+		padding-bottom: 60px;
+
+		&.qodef-grid.qodef--no-bottom-space {
+			margin-bottom: 0 !important;
+
+			@include qodefScreenSize680 {
+				padding-bottom: 27px;
+			}
+		}
+		
+		article {
+			padding: 15px 0;
+			will-change: transform; // blur fix for slider transition
+
+			* {
+				backface-visibility: hidden; // blur fix for slider transition
+			}
+		}
+
+		&.qodef-indent-slider--yes {
+			@media screen and (min-width: 1024px) {
+				width: 131%;
+				margin: 0 -15.5%;
+			}
+		}
+
+		.swiper-pagination-bullets {
+			bottom: 2px !important;
+		}
+	}
+}

@@ -1,0 +1,26 @@
+@media only screen and (max-width: 1680px) {
+	.qodef-anchor-menu {
+		left: 18px;
+		
+		.qodef-anchor{
+			.qodef-anchor-menu-item-label{
+				display: none;
+			}
+			
+			.qodef-anchor-menu-item-number{
+				padding: 0;
+			}
+			
+			&.current{
+				.qodef-anchor-menu-item-number{
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: $screen-size-1024) {
+	.qodef-anchor-menu {
+		display: none;
+	}
+}

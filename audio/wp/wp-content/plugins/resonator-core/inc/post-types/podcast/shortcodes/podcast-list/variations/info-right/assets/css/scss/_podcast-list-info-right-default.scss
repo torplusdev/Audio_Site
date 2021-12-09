@@ -1,0 +1,90 @@
+/* ==========================================================================
+   Podcast List shortcode variation styles
+   ========================================================================== */
+
+.qodef-podcast-list {
+	
+	&.qodef-item-layout--info-right {
+		
+		article {
+			.qodef-e-inner {
+				display: flex;
+				@include qodefSquareShadowStyles();
+				background-color: #fff;
+			}
+		}
+		
+		.qodef-e-image {
+			position: relative;
+			width: 50%;
+
+			.qodef-e-media-image {
+				border-radius: 10px 0 0 10px;
+			}
+		}
+		
+		.qodef-info-top {
+			display: flex;
+			margin-bottom: 4px;
+			font-size: 14px;
+			color: #8e8b8c;
+			
+			.qodef-e-episode-number {
+				
+				&:after {
+					content: '•';
+					margin-right: 5px;
+				}
+			}
+
+			div:not(:last-child) {
+
+				&:after {
+					content: '•';
+					margin-right: 5px;
+				}
+			}
+		}
+		
+		.qodef-e-content {
+			padding: 26px 45px 30px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			width: 50%;
+			
+			.qodef-inof--social-share {
+				display: inline-block;
+				font-size: 14px;
+				margin-right: 5px;
+			}
+			
+			.qodef-e-title {
+				margin-bottom: 17px;
+			}
+			
+			.qodef-e-read-more {
+				display: inline-block;
+			}
+		}
+
+		@include qodefScreenSize1024 {
+
+			.qodef-e-inner {
+				display: block!important;
+
+				.qodef-e-image {
+					width: 100%;
+
+					.qodef-e-media-image {
+						border-radius: 10px 10px 0 0;
+					}
+				}
+
+				.qodef-e-content {
+					width: 100%;
+				}
+			}
+		}
+	}
+}

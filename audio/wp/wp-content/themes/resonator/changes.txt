@@ -1,0 +1,5 @@
+1.1
+- Added compatibility with Qi Addons for Elementor plugin
+- Added WordPress 5.7.1 compatibility
+- Added WooCommerce 5.2.2 compatibility
+- Updated Revolution Slider plugin to 6.4.8

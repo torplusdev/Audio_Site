@@ -1,0 +1,228 @@
+/* ==========================================================================
+   Podcast Category List shortcode style - begin
+   ========================================================================== */
+
+.qodef-podcast-season-list {
+
+	* {
+		backface-visibility: hidden; // blur fix for slider transition
+	}
+
+	&.qodef-swiper-container {
+		padding-bottom: 73px;
+
+		.swiper-pagination-bullets {
+			bottom: 0 !important;
+		}
+
+		&.qodef-indent-slider-right--yes {
+
+			@media screen and (min-width: 768px) {
+				width: 172%;
+				padding-left: 20px;
+			}
+
+			@media screen and (min-width: 1024px) {
+				width: 182%;
+			}
+
+			@media screen and (min-width: 1025px) {
+				width: 121.7%;
+			}
+		}
+
+	}
+
+	article {
+
+		/* js generated class */
+		&.qodef-hovered {
+
+			.qodef-e-image {
+
+				img {
+					transform: $img-zoom-transform;
+				}
+			}
+		}
+	}
+	
+	.qodef-e-inner {
+		@include qodefRelativeLayout();
+		box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.08);
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 10px;
+		border-radius: 10px;
+	}
+	
+	.qodef-e-image {
+		-webkit-border-radius: 10px 10px 0 0;
+		-moz-border-radius: 10px 10px 0 0;
+		border-radius: 10px 10px 0 0;
+		overflow: hidden;
+		
+		.qodef-e-media-icon {
+			position: absolute;
+			right: 0;
+			top: 0;
+			background-color: #fff;
+			transform: translateX(-10px) translateY(10px);
+			border-radius: 10px;
+			width: 45px;
+			height: 45px;
+			line-height: 45px;
+			text-align: center;
+			font-size: 23px;
+			z-index: 50;
+		}
+		
+		img {
+			display: block;
+			transition: $img-zoom-transition;
+		}
+
+		&:hover {
+
+			img {
+				transform: $img-zoom-transform;
+			}
+		}
+	}
+	
+	.qodef-e-content {
+
+		padding-left: 28px;
+
+		@include qodefScreenSize1024 {
+			padding-right: 28px;
+		}
+		
+		a {
+			position: relative;
+			z-index: 1;
+		}
+	}
+
+	.qodef-season-items {
+
+		.qodef-m-item {
+			height: 48px;
+			margin-bottom: 22px;
+			display: flex;
+			align-items: center;
+
+			@include qodefScreenSize1024 {
+				height: auto;
+			}
+
+			@include qodefScreenSize680 {
+				align-items: center;
+			}
+
+			.qodef-m-player-box {
+				position: relative;
+				width: 49px;
+				height: 49px;
+				margin-right: 18px;
+
+				@include qodefScreenSize680 {
+					width: 56px;
+				}
+
+				.mejs-playpause-button,
+				.mejs-playpause-button > button {
+					width: 49px;
+					height: 49px;
+					flex: 0 0 49px;
+					line-height: 49px;
+				}
+
+				.mejs-controls {
+					/* hover animation fix */
+					position: relative;
+					display: inline-block;
+					width: 49px;
+					height: 49px;
+				}
+
+				.mejs-playpause-button > button {
+					top: 0;
+					left: 0;
+					/* hover animation fix */
+					margin-right: 0;
+					display: block;
+					box-sizing: border-box;
+					position: static;
+
+					/* hover animation fix */
+					&:after {
+						width: 49px;
+						height: 49px;
+					}
+
+					&:before {
+						top: -5px;
+						left: 1px;
+						width: 8px;
+					}
+				}
+			}
+
+			.qodef-e-title-link {
+				@include qodefHeadingStyle();
+				font-size: 18px;
+				@include qodefUnderline($background-y-position: 0px);
+			}
+		}
+	}
+	
+	.qodef-e-title {
+		margin: 0;
+	}
+
+	p.qodef-e-title {
+		font-size: 14px;
+		color: #8e8b8c;
+
+		a {
+			color: inherit;
+
+			&:hover {
+				color: $category-hover-color;
+			}
+		}
+	}
+
+	.qodef-e-tagline {
+		margin: 6px 0 32px;
+
+		.qodef-e-tagline-link {
+			@include qodefUnderline();
+		}
+	}
+
+	.qodef-m-episode {
+		font-size: 14px;
+		color: #8e8b8c;
+	}
+	
+	.qodef-e-description {
+		margin: 9px 0 0;
+	}
+	
+	.qodef-e-link {
+		@include qodefAbsoluteLayout();
+	}
+
+	.qodef-e-more-btn {
+		margin: 36px 0 40px;
+	}
+
+	.qodef-m-player-box {
+		.mejs-controls {
+			> *:not(.mejs-playpause-button) {
+				display: none;
+			}
+		}
+	}
+}

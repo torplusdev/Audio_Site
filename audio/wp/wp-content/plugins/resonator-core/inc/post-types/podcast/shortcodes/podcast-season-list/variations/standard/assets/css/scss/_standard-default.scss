@@ -1,0 +1,28 @@
+/* ==========================================================================
+   Podcast Season List shortcode variation style - begin
+   ========================================================================== */
+
+.qodef-podcast-season-list {
+	
+	&.qodef-layout--standard {
+
+		.qodef-e-content {
+			margin-top: 24px;
+		}
+
+		//align mejs buttons pause and replay
+		.mejs-pause>button:before {
+			position: relative;
+			top: 7px !important;
+			left: 0 !important;
+			font-size: 22px !important;
+		}
+
+		.mejs-replay > button:before {
+			top: 7px!important;
+			left: 0!important;
+			position: relative;
+		}
+		//end align mejs buttons pause and replay
+	}
+}

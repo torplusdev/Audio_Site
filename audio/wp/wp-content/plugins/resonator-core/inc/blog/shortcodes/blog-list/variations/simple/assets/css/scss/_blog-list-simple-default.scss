@@ -1,0 +1,86 @@
+/* ==========================================================================
+   Blog List Simple styles
+   ========================================================================== */
+
+.qodef-blog {
+	
+	&.qodef-item-layout--simple {
+		
+		article {
+			
+			.qodef-e-inner {
+				@include qodefSquareShadowStyles();
+				display: flex;
+				align-items: flex-start;
+
+				.qodef-e-title-link {
+					@include qodefUnderline();
+				}
+			}
+			
+			.qodef-e-media-image {
+				flex-shrink: 0;
+				width: 25%;
+				margin: 0;
+				border-top-left-radius: 10px;
+				border-bottom-left-radius: 10px;
+				overflow: hidden;
+				
+				img {
+					transition: $img-zoom-transition;
+				}
+
+				&:hover {
+
+					img {
+						transform: $img-zoom-transform;
+					}
+				}
+			}
+			
+			.qodef-e-content {
+				padding: 30px 30px 0 36px;
+				
+				.qodef-e-info {
+					
+					&.qodef-info--bottom {
+						margin-top: 5px;
+						margin-bottom: 30px;
+					}
+				}
+			}
+			
+			.qodef-e-read-more {
+				margin: 0;
+			}
+
+			/* js generated class */
+			&.qodef-hovered {
+
+				.qodef-e-media-image {
+
+					img {
+						transform: $img-zoom-transform;
+					}
+				}
+			}
+		}
+	}
+	
+	&:not(.qodef-col-num--1) {
+		
+		article {
+			
+			.qodef-e-inner {
+				flex-direction: column;
+			}
+			
+			.qodef-e-media-image {
+				width: 100%;
+				border-top-left-radius: 10px;
+				border-top-right-radius: 10px;
+				border-bottom-left-radius: 0;
+			}
+		}
+	}
+}

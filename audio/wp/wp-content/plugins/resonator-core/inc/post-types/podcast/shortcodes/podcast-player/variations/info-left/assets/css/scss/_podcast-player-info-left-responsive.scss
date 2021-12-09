@@ -1,0 +1,74 @@
+/* ==========================================================================
+   Podcast Player styles responsive
+   ========================================================================== */
+
+.qodef-podcast-player-sc {
+	
+	&.qodef-layout--info-left {
+		
+		@include qodefScreenSize1024 {
+
+			.qodef-m-player-box {
+				align-items: start;
+
+				.qodef-m-box-info {
+					flex: 0 0 46%;
+				}
+
+				.qodef-e-image {
+					flex: 0 0 43%;
+				}
+			}
+		
+			.qodef-e-image {
+				
+				.qodef-e-episode-marker {
+					font-size: 54px;
+					top: calc(50% - 12px);
+					left: calc(-50% - 3px);
+				}
+			}
+		}
+		
+		@include qodefScreenSize768 {
+			
+			.qodef-m-player-box {
+				flex-direction: column-reverse;
+			}
+			
+			.qodef-e-image {
+				margin-bottom: 35px;
+				display: block;
+				width: 100%;
+
+				img	{
+					width: 100%;
+				}
+				
+				.qodef-e-episode-marker {
+					font-size: 90px;
+					transform: rotate(0deg) !important;
+					top: calc(0% - 35px);
+					left: 0;
+				}
+			}
+		}
+		
+		@include qodefScreenSize680 {
+
+			.qodef-m-player-box {
+
+				.qodef-e-image {
+					flex: 0 0 0;
+				}
+			}
+			
+			.qodef-e-image {
+
+				.qodef-e-episode-marker {
+					display: none;
+				}
+			}
+		}
+	}
+}

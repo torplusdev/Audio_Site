@@ -1,0 +1,19 @@
+/* ==========================================================================
+   Spinner layout styles
+   ========================================================================== */
+
+#qodef-page-spinner {
+	
+	&.qodef-layout--pulse {
+		
+		.qodef-m-pulse {
+			width: 40px;
+			height: 40px;
+			margin: -20px 0 0 -20px;
+			background-color: currentColor;
+			border-radius: 50%;
+			box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.15%);
+			animation: qode-scaleout 1s infinite ease-in-out;
+		}
+	}
+}

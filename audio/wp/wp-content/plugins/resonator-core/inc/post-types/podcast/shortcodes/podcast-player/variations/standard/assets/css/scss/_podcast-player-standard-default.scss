@@ -1,0 +1,213 @@
+/* ==========================================================================
+   Podcast Info shortcode styles
+   ========================================================================== */
+
+.qodef-podcast-player-sc {
+
+	&.qodef-layout--standard {
+
+		.qodef-m-player-box {
+			display: flex;
+			align-items: center;
+			padding-right: 0;
+			box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.08);
+			background-color: #fff;
+			border-radius: 10px;
+			overflow: hidden;
+
+			.qodef-e-image {
+				flex: 0 0 24%;
+				padding-right: 21px;
+
+				@include qodefScreenSize1024 {
+					flex: 0 0 33%;
+					padding-right: 0;
+				}
+
+				@include qodefScreenSize768 {
+					flex: 0 0 36%;
+				}
+
+				@include qodefScreenSize680 {
+					display: none;
+				}
+			}
+			
+			.qodef-m-title-area {
+				display: flex;
+				justify-content: space-between;
+				
+				.qodef-e-title-link {
+					width: 45%;
+					
+					@include qodefScreenSize1024 {
+						width: 100%;
+					}
+				}
+				
+				.qodef-e-title {
+					margin: 0 0 10px;
+					
+					@include qodefScreenSize1024 {
+						margin: 0 0 7px;
+					}
+
+					@include qodefScreenSize768 {
+						margin: 0;
+					}
+				}
+				
+				.qodef-e-read-more {
+					margin-right: 11px;
+
+					@include qodefScreenSize1024 {
+						display: none;
+					}
+				}
+				
+			}
+
+			.qodef-m-box-info {
+				display: flex;
+				flex-direction: column;
+				flex: 0 0 72%;
+				padding-left: 27px;
+				
+				@include qodefScreenSize1024 {
+					padding-right: 17px;
+					flex: 0 0 67%;
+				}
+
+				@include qodefScreenSize768 {
+					flex: 0 0 64%;
+				}
+
+				@include qodefScreenSize680 {
+					padding: 20px;
+					flex: 0 0 100%;
+
+					.qodef-e-title {
+						font-size: 26px;
+					}
+
+					.mejs-time-rail .mejs-time-handle-content {
+						transform: scale(1) !important;
+					}
+				}
+
+				.qodef-m-info-top {
+					display: flex;
+					margin-bottom: 30px;
+
+					@include qodefScreenSize1366 {
+						margin-bottom: 20px;
+					}
+					
+					@include qodefScreenSize1024 {
+						margin-bottom: 17px;
+					}
+
+					@include qodefScreenSize768 {
+						margin-top: 6px;
+						margin-bottom: 16px;
+					}
+					
+					color: #8e8b8c;
+					font-size: 14px;
+					
+					.qodef-e-categories {
+						display: inline;
+						
+						a {
+							color: #8e8b8c;
+
+							&:hover {
+								color: $category-hover-color;
+							}
+						}
+						
+						a:not(:last-child) {
+							
+							&:after {
+								content: '•';
+							}
+						}
+					}
+					
+					div:not(:last-child) {
+						
+						&:after {
+							content: '•';
+							margin-right: 5px;
+						}
+					}
+				}
+			}
+
+			.qodef-podcast-player {
+				min-height: 66px;
+				display: flex;
+				align-items: center;
+				flex: 1;
+				width: 100%;
+
+				.mejs-skip-back-button>button,
+				.mejs-jump-forward-button>button,
+				.mejs-skip-back-button>button:before,
+				.mejs-jump-forward-button>button:before,
+				.mejs-speed-button>button {
+					font-size: 13px;
+					color: $additional-text-color;
+				}
+
+				.mejs-skip-back-button>button,
+				.mejs-jump-forward-button>button,
+				.mejs-button.mejs-skip-back-button,
+				.mejs-button.mejs-jump-forward-button {
+					width: 46px;
+				}
+
+				.mejs-skip-back-button>button:before,
+				.mejs-jump-forward-button>button:before {
+					margin: 0 auto 11px;
+				}
+
+				.mejs-playpause-button {
+					margin-right: 6px;
+				}
+
+				.mejs-time-rail {
+					margin-left: 15px;
+				}
+
+				.mejs-container {
+					width: 100%;
+					
+					.mejs-time {
+						padding-top: 6px;
+						color: $additional-text-color;
+					}
+				}
+			}
+		}
+
+		&.qodef--has-appear {
+			opacity: 0;
+			visibility: hidden;
+			transform: translateY(5%);
+			transition: .6s cubic-bezier(.3,.85,.41,.81);
+			will-change: transform;
+
+			* {
+				backface-visibility: hidden;
+			}
+
+			&.qodef--appeared {
+				opacity: 1;
+				visibility: visible;
+				transform: translateY(0);
+			}
+		}
+	}
+}
+

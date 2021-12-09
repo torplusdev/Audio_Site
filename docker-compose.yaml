@@ -1,0 +1,40 @@
+version: "3.9"
+services:
+  hp_torpus:
+    depends_on:
+      - wp_audio
+    ports:
+    - 80:80
+    - 443:443 # you can comment
+    - 5037:5037
+    image: torplusserviceregistry.azurecr.io/private/ipfs_haproxy:latest 
+    volumes:
+      - ./tor:/root/tor
+      - ./hidden_service:/root/hidden_service
+      - ./tor:/usr/local/etc/tor/
+      - ./ssl:/etc/ssl/torplus/
+  wp_audio:
+    depends_on:
+      - db_audio
+    ports: 
+      - 8092:8092
+    image: wordpress:latest
+    volumes:
+      - ./audio/wp:/var/www/html
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: db_audio:3306
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress
+  db_audio:
+    image: mysql:5.7
+    volumes:
+    - ./audio/db:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootps
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+  

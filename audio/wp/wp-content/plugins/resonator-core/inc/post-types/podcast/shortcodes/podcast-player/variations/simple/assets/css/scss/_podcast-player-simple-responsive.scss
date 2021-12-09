@@ -1,0 +1,110 @@
+/* ==========================================================================
+   Podcast Info shortcode responsive styles
+   ========================================================================== */
+
+.qodef-podcast-player-sc {
+
+	&.qodef-layout--simple {
+
+		.qodef-m-player-box {
+
+			@include qodefScreenSize1024 {
+				display: block;
+				position: relative;
+				box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.08);
+				border-radius: 10px;
+				background-color: #fff;
+
+				.qodef-e-image {
+					display: inline-block;
+					width: 29.218%;
+					padding-right: 0;
+					margin-right: 0;
+
+					img {
+						border-radius: 10px 0 0 10px;
+					}
+				}
+
+				.qodef-m-box-info {
+					display: inline-block;
+					width: 69%;
+					padding: 0 17px 0 22px;
+					position: relative;
+					top: 5px;
+				}
+
+				.qodef-e-title-link {
+					background-position-y: -2px;
+				}
+
+				.qodef-podcast-title {
+					width: 100%;
+					@include qodefHeadingStyle(h3);
+					margin: 0 0 7px;
+					text-overflow: unset;
+					white-space: normal;
+				}
+
+				.qodef-m-info-top {
+					margin-bottom: 17px;
+				}
+
+				.qodef-podcast-player {
+					position: absolute;
+					right: 46px;
+					bottom: 5px;
+					width: 62.448%;
+					padding: 0 17px 0 9px;
+				}
+			}
+
+			@include qodefScreenSize768 {
+
+				.qodef-m-box-info {
+					top: 0;
+				}
+
+				.qodef-e-image {
+					width: 35.879%;
+				}
+
+				.qodef-m-box-info {
+					width: 63%;
+				}
+
+				.qodef-podcast-player {
+					bottom: 17px;
+					right: 0;
+					padding: 0 17px 0 12px;
+				}
+			}
+
+			@include qodefScreenSize680 {
+				padding: 20px;
+
+				.qodef-m-box-info {
+					width: 100%;
+					padding: 0;
+				}
+
+				.qodef-e-image {
+					display: none;
+				}
+
+				.qodef-podcast-player {
+					position: relative;
+					width: 100%;
+					bottom: 0;
+					padding: 0;
+				}
+
+				.qodef-podcast-title {
+					font-size: 26px;
+					margin: 0 0 6px;
+				}
+			}
+		}
+	}
+}
+

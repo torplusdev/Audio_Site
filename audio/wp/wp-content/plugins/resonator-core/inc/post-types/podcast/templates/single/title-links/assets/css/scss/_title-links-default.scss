@@ -1,0 +1,64 @@
+/* ==========================================================================
+   Single Post Title Links
+   ========================================================================== */
+
+.qodef-podcast-title-area-links {
+	display: flex;
+	margin: 45px auto 0;
+	
+	@include qodefScreenSize680 {
+		display: block;
+
+		> a  {
+			display: block;
+			margin-bottom: 20px;
+
+			&:first-child {
+				margin-right: 0;
+				margin-bottom: 11px;
+			}
+		}
+	}
+	
+	.qodef-e-link {
+		margin-right: 20px;
+		
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+	
+	.qodef-podcast-title-area-link {
+		display: flex;
+		padding: 15px 20px;
+		border-radius: 50px;
+		background-color: white;
+		
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+	
+	.qodef-e-icon {
+		margin-right: 10px;
+		font-size: 30px;
+	}
+	
+	.qodef-e-info {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		
+		.qodef-e-label {
+			font-size: 10px;
+			line-height: 1em;
+		}
+		
+		.qodef-e-title {
+			font-size: 15px;
+			font-weight: 700;
+			line-height: 1em;
+			margin-top: 5px;
+		}
+	}
+}

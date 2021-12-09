@@ -1,0 +1,83 @@
+/* ==========================================================================
+   Podcast List shortcode variation styles
+   ========================================================================== */
+
+.qodef-podcast-list {
+ 
+	&.qodef-item-layout--info-below {
+
+		article {
+			.qodef-e-inner {
+				@include qodefSquareShadowStyles();
+			}
+			
+			&.qodef_additional_top_margin:nth-of-type(2n) {
+				margin-top: 130px;
+				padding: 0 0 0 65px;
+				margin-bottom: 20px;
+			}
+			
+			&.qodef_additional_top_margin:nth-of-type(2n+1){
+				padding: 0 65px 0 0;
+				margin-bottom: 20px;
+			}
+		}
+
+		.qodef-e-image {
+
+			.qodef-e-media-image {
+				border-radius: 10px 10px 0 0;
+			}
+		}
+
+		.qodef-info-top {
+			display: flex;
+			flex-wrap: wrap;
+			margin-bottom: 5px;
+			font-size: 14px;
+			color: #8e8b8c;
+			
+			.qodef-e-episode-number {
+				
+				&:after {
+					content: '•';
+					margin-right: 5px;
+				}
+			}
+		}
+		
+		.qodef-e-content {
+			padding: 34px 48px 36px 38px;
+			
+			.qodef-inof--social-share {
+				display: inline-block;
+				font-size: 14px;
+				margin-right: 5px;
+				margin-top: 18px;
+			}
+			
+			.qodef-e-read-more {
+				display: inline-block;
+				margin-top: 3px;
+			}
+
+			.qodef-e-excerpt {
+				margin: 12px 0 13px 0;
+			}
+		}
+
+		&.qodef-custom-padding-40 {
+
+			.qodef-e-content {
+				padding: 26px 40px 25px;
+			}
+		}
+
+		&.qodef-pl-two-cols-custom-padding {
+
+			.qodef-e-content {
+				padding: 35px 92px 38px 39px;
+			}
+		}
+	}
+}

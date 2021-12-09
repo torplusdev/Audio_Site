@@ -1,0 +1,22 @@
+/* ==========================================================================
+   Contact Form 7 widget styles
+   ========================================================================== */
+
+.qodef-contact-form-7 {
+	@include qodefRelativeLayout();
+	
+	.ajax-loader {
+		position: absolute;
+		right: -10px;
+	}
+	
+	.qodef-contact-form-7-newsletter {
+		text-align: center;
+		
+		input[type="email"] {
+			padding: 12px 10px;
+			font-size: 17px;
+			margin-bottom: 45px;
+		}
+	}
+}

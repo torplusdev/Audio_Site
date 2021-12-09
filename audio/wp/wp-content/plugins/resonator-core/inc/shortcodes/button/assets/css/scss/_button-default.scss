@@ -1,0 +1,45 @@
+/* ==========================================================================
+   Button shortcode styles
+   ========================================================================== */
+
+.qodef-button {
+	
+	&.qodef-html--link {
+		@include qodefButtonDefaultStyle();
+		@include qodefButtonSize();
+
+		svg {
+			position: relative;
+			display: inline-block;
+			vertical-align: middle;
+			width: 19px;
+			height: 13px;
+			margin-left: 9px;
+			bottom: 1px;
+
+			* {
+				fill: none;
+				stroke: currentColor;
+			}
+		}
+
+		&:hover {
+			svg {
+				animation: qodef-line-visible-animation .7s cubic-bezier(0.5, 0.54, 0, 0.75) forwards;
+			}
+		}
+	}
+	
+	&.qodef-size--small {
+		@include qodefButtonSize(small);
+	}
+	
+	&.qodef-size--large {
+		@include qodefButtonSize(large);
+	}
+	
+	&.qodef-size--full {
+		width: 100%;
+		text-align: center;
+	}
+}

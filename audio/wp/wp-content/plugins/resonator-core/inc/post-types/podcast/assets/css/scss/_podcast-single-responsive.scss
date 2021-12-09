@@ -1,0 +1,84 @@
+/* ==========================================================================
+   Podcast Single styles responsive
+   ========================================================================== */
+
+.qodef-podcast-single {
+	
+	@include qodefScreenSize1024 {
+		
+		.qodef-podcast-content {
+			margin-right: 0;
+		}
+
+		.qodef-episode-links-content {
+			margin-left: 0;
+		}
+
+		.qodef-m-player-box {
+			margin-bottom: 50px;
+
+			.qodef-e-image {
+				flex: 0 0 30%;
+				padding-right: 0;
+			}
+
+			.qodef-m-box-info {
+				flex: 0 0 70%;
+
+				.qodef-m-info-top {
+					margin-bottom: 17px;
+				}
+			}
+		}
+
+		.qodef-grid.qodef-responsive--predefined.qodef-col-num--3.qodef-layout--columns>.qodef-grid-inner>.qodef-grid-item {
+			width: 50%;
+		}
+
+		.qodef-grid.qodef-responsive--predefined.qodef-col-num--3.qodef-layout--columns>.qodef-grid-inner>.qodef-grid-item:nth-child(2n+1) {
+			clear: both;
+		}
+	}
+
+  @include qodefScreenSize768 {
+
+    .qodef-m-player-box {
+
+      .qodef-e-image {
+        flex: 0 0 37%;
+        padding-right: 0;
+      }
+
+      .qodef-m-box-info {
+        flex: 0 0 63%;
+      }
+    }
+  }
+
+	@include qodefScreenSize680 {
+		.qodef-m-player-box {
+
+			.qodef-e-title {
+
+				&.qodef-podcast-title {
+					font-size: 26px;
+					margin: 0 0 6px;
+				}
+			}
+
+			.qodef-e-image {
+				flex: 0 0 0;
+				padding-right: 0;
+			}
+
+			.qodef-m-box-info {
+				flex: 0 0 100%;
+				padding: 20px;
+
+				.qodef-m-info-top {
+					margin-bottom: 16px;
+				}
+			}
+		}
+	}
+}

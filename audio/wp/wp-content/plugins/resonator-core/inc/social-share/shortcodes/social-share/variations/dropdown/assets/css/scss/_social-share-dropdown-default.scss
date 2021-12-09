@@ -1,0 +1,280 @@
+/* ==========================================================================
+   Social Share shortcode styles
+   ========================================================================== */
+
+.qodef-social-share {
+	
+	$socialShareWidth: 90px;
+	$socialShareHeight: 30px;
+	
+	&.qodef-layout--dropdown {
+		position: relative;
+		display: inline-block;
+		vertical-align: bottom;
+		
+		.qodef-social-title {
+			margin: 0 0 0 3px;
+			vertical-align: middle;
+			font-size: 14px;
+			font-weight: 400;
+			color: #8e8b8c;
+		}
+		.qodef-social-share-icon {
+			vertical-align: middle;
+			color: #8e8b8c;
+			font-size: 20px;
+		}
+		
+		&:hover {
+			
+			.qodef-social-share-dropdown ul li {
+				opacity: 1;
+				visibility: visible;
+				cursor: pointer;
+				
+				/* opacity and visibility need to be different, but not background-color */
+				@for $i from 2 through 7 {
+					&:nth-child(#{$i}) {
+						$transition-delay: #{($i)/10+s};
+						
+						-webkit-transition-delay: $transition-delay;
+						-moz-transition-delay: $transition-delay;
+						transition-delay: $transition-delay;
+					}
+				}
+			}
+		}
+		
+		.qodef-social-share-dropdown-opener {
+			display: flex;
+			align-items: center;
+			
+			.qodef-social-share-title {
+				display: inline-block;
+				vertical-align: top;
+				margin-right: 5px;
+			}
+		}
+		
+		.qodef-social-share-dropdown {
+			position: absolute;
+			visibility: hidden;
+			z-index: 950;
+			
+			.qodef-layout--circle {
+				width: 20px;
+				height: 20px;
+			}
+			
+			ul {
+				position: relative;
+				display: block;
+				z-index: 990;
+				margin: 0;
+				padding: 0 !important;
+			}
+			
+			li {
+				position: absolute;
+				display: block;
+				text-align: center;
+				visibility: hidden;
+				overflow: hidden;
+				opacity: 0;
+				transition: opacity .2s ease-out, visibility .2s ease-out;
+				
+				a {
+					transition: color .2s ease-out, background-color .2s ease-out;
+				}
+				
+				* {
+					display: block;
+					line-height: inherit;
+				}
+			}
+		}
+		
+		&.qodef-dropdown--bottom {
+			
+			.qodef-social-share-dropdown {
+				bottom: 0;
+				left: 0;
+				
+				li {
+					display: flex;
+					align-items: center;
+					height: $socialShareHeight;
+					
+					&.qodef-facebook-share a:hover {
+						background-color: #3b5998;
+						color: #fff;
+					}
+					
+					&.qodef-twitter-share a:hover {
+						background-color: #00aced;
+						color: #fff;
+					}
+					
+					&.qodef-linkedin-share a:hover {
+						background-color: #007bb5;
+						color: #fff;
+					}
+					
+					&.qodef-tumblr-share a:hover {
+						background-color: #32506d;
+						color: #fff;
+					}
+					
+					&.qodef-pinterest-share a:hover {
+						background-color: #cb2027;
+						color: #fff;
+					}
+					
+					&.qodef-vk-share a:hover {
+						background-color: #45668e;
+						color: #fff;
+					}
+					
+					a {
+						font-size: 12px;
+						background-color: #8e8b8c;
+						line-height: 20px;
+						color: #fff;
+						border-radius:50%;
+					}
+					
+					@for $i from 1 through 7 {
+						&:nth-child(#{$i}) {
+							bottom: #{-$i*(($socialShareHeight))};
+						}
+					}
+				}
+			}
+		}
+		
+		&.qodef-dropdown--right {
+			
+			.qodef-social-share-dropdown {
+				top: 0;
+				right: 1px;
+				
+				li {
+					width: calc(#{$socialShareWidth} / 3);
+
+					&.qodef-facebook-share a:hover {
+						background-color: #000;
+						color: #fff;
+					}
+
+					&.qodef-twitter-share a:hover {
+						background-color: #000;
+						color: #fff;
+					}
+
+					&.qodef-linkedin-share a:hover {
+						background-color: #000;
+						color: #fff;
+					}
+
+					&.qodef-tumblr-share a:hover {
+						background-color: #000;
+						color: #fff;
+					}
+
+					&.qodef-pinterest-share a:hover {
+						background-color: #000;
+						color: #fff;
+					}
+
+					&.qodef-vk-share a:hover {
+						background-color: #000;
+						color: #fff;
+					}
+
+					a {
+						font-size: 12px;
+						background-color: #8e8b8c;
+						line-height: 20px;
+						color: #fff;
+						border-radius:50%;
+					}
+					
+					@for $i from 1 through 7 {
+						&:nth-child(#{$i}) {
+							left: #{($i - 1)*(($socialShareWidth / 3)) + 5};
+						}
+					}
+				}
+			}
+
+			.qodef-social-share-dropdown-opener {
+				flex-direction: row-reverse;
+				padding-right: 6px;
+
+				.qodef-social-title {
+					margin: 0 6px 0 0;
+				}
+			}
+		}
+		
+		&.qodef-dropdown--left {
+			
+			.qodef-social-share-dropdown {
+				top: 0;
+				left: 1px;
+				
+				li {
+					width: calc(#{$socialShareWidth} / 3);
+
+					&.qodef-facebook-share a:hover {
+						background-color: #000;
+						color: #fff;
+					}
+
+					&.qodef-twitter-share a:hover {
+						background-color: #000;
+						color: #fff;
+					}
+
+					&.qodef-linkedin-share a:hover {
+						background-color: #000;
+						color: #fff;
+					}
+
+					&.qodef-tumblr-share a:hover {
+						background-color: #000;
+						color: #fff;
+					}
+
+					&.qodef-pinterest-share a:hover {
+						background-color: #000;
+						color: #fff;
+					}
+
+					&.qodef-vk-share a:hover {
+						background-color: #000;
+						color: #fff;
+					}
+
+					a {
+						font-size: 12px;
+						background-color: #8e8b8c;
+						line-height: 20px;
+						color: #fff;
+						border-radius:50%;
+					}
+					
+					@for $i from 1 through 7 {
+						&:nth-child(#{$i}) {
+							right: #{($i - 1)*(($socialShareWidth / 3)) + 5};
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+   Social Share shortcode styles
+   ========================================================================== */

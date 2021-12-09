@@ -1,0 +1,35 @@
+/* ==========================================================================
+   Image Gallery shortcode styles
+   ========================================================================== */
+
+.qodef-image-gallery {
+
+    &.qodef-swiper-container {
+        margin-top: -25px;
+        padding: 25px 20px 73px 20px;
+
+        .swiper-pagination-bullets {
+            bottom: 0 !important;
+        }
+    }
+
+    &.qodef-image-hover-animation--yes {
+
+        .qodef-image-wrapper {
+            transform: translateY(0);
+            transition: .25s cubic-bezier(.22,.61,.36,1);
+            will-change: transform;
+
+            &:hover {
+                transform: translateY(-8px);
+            }
+        }
+    }
+
+    .qodef-image-wrapper {
+
+        img {
+            @include qodefSquareShadowStyles();
+        }
+    }
+}

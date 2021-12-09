@@ -1,0 +1,263 @@
+/* ==========================================================================
+   Related Podcast Single Items styles
+   ========================================================================== */
+
+#qodef-single-podcast-navigation {
+
+	+ #qodef-podcast-single-related-items {
+		margin-top: 0;
+
+		.qodef-podcast-list.qodef-swiper-container {
+			padding-top: 0;
+		}
+	}
+}
+
+#qodef-podcast-single-related-items {
+	@include qodefRelativeLayout();
+	margin-top: 65px;
+	background-color: #f8f8f8;
+
+	.qodef-podcast-list {
+
+		&.qodef-grid.qodef-gutter--custom-wast.qodef--no-bottom-space {
+			margin-bottom: 0;
+		}
+
+		&.qodef-swiper-container {
+			padding: 100px 0;
+
+			@include qodefScreenSize680 {
+				display: block;
+				width: 86%;
+				margin: 0 auto;
+			}
+
+			@include qodefScreenSize480 {
+				width: 82%;
+			}
+		}
+
+		&.qodef-item-layout--info-right {
+
+			&.qodef-transitioning {
+
+				.qodef-navigation-holder {
+					opacity: .4;
+					pointer-events: none;
+				}
+			}
+
+			.qodef-e-content {
+				flex-direction: column-reverse;
+				width: 56%;
+				padding: 26px 45px 30px 61px;
+
+				.qodef-info-top {
+					margin: 0;
+				}
+
+				.qodef-next-text {
+					font-family: $heading-font;
+					color: #8e8b8c;
+					font-size: 18px;
+					font-weight: 600;
+				}
+
+				.qodef-e-title {
+					margin: 18px 0 8px;
+
+					@include qodefScreenSize768 {
+						@include qodefHeadingStyle(h4);
+					}
+				}
+			}
+
+			.qodef-e-inner {
+				border-radius: 0;
+				box-shadow: none;
+				background-color: transparent;
+			}
+
+			.qodef-e-image {
+				width: 285.34px;
+
+				.qodef-e-media-image {
+					border-radius: 10px;
+				}
+			}
+
+			.qodef-navigation-holder {
+				position: absolute;
+				top: 50%;
+				right: 15.3%;
+				transform: translateY(-50%);
+				z-index: 10;
+				opacity: 1;
+				transition: opacity .3s ease;
+
+				@include qodefScreenSize1024 {
+					right: 11.5%;
+				}
+
+				@include qodefScreenSize768 {
+					right: 52px;
+				}
+
+				@include qodefScreenSize680 {
+					position: relative;
+					right: 0;
+					margin-top: 63px;
+				}
+
+				.swiper-button-next,
+				.swiper-button-prev {
+					position: relative;
+					display: inline-block;
+					transform: none;
+					left: initial !important;
+					right: initial !important;
+				}
+
+				.swiper-button-prev {
+					color: #8e8b8c;
+				}
+
+				.qodef-nav-next-text,
+				.qodef-nav-prev-text {
+					position: relative;
+					@include qodefHeadingStyle(h6, false);
+				}
+
+				.qodef-nav-next-text {
+					padding-left: 15px;
+					margin-right: 11px;
+				}
+
+				.qodef-nav-prev-text {
+					padding-right: 15px;
+					margin-left: 11px;
+
+					&:after {
+						content: "";
+						position: absolute;
+						width: 1px;
+						height: 30px;
+						background-color: #8e8b8c;
+						left: 100%;
+						top: 50%;
+						transform: translateY(-50%);
+					}
+				}
+			}
+		}
+
+		article {
+			left: -6.9%;
+			padding: 0;
+			transition: opacity .5s ease;
+
+			&.swiper-slide-prev {
+				opacity: 0;
+			}
+
+			@include qodefScreenSize1024 {
+
+				&.swiper-slide-next {
+					opacity: 0;
+				}
+			}
+
+			@media screen and (max-width: 1680px) {
+				left: -12.3%;
+
+				.qodef-e-content {
+					width: 67%;
+				}
+			}
+
+			@include qodefScreenSize1440 {
+				left: -12.7%;
+
+				.qodef-e-content {
+					width: 58% !important;
+				}
+
+				.qodef-e-image {
+					width: 241.44px !important;
+				}
+			}
+
+			@media screen and (max-width: 1368px) {
+				left: -15%;
+
+				.qodef-e-content {
+					width: 60% !important;
+					padding: 26px 5px 30px 61px !important;
+				}
+			}
+
+			@include qodefScreenSize1280 {
+				left: -18.2%;
+
+				.qodef-e-content {
+					position: absolute;
+					right: -112px;
+					top: 0;
+					width: 80% !important;
+				}
+			}
+
+			@media screen and (max-width: 1060px) {
+				left: -20.8%;
+
+				.qodef-e-image {
+					width: 210.72px !important;
+				}
+
+				.qodef-e-content {
+					right: -103px;
+				}
+			}
+
+			@include qodefScreenSize1024 {
+				left: -13.9%;
+
+				.qodef-e-image {
+					width: 168.56px !important;
+				}
+
+				.qodef-e-content {
+					right: -133px;
+					padding: 0 !important;
+				}
+			}
+
+			@include qodefScreenSize768 {
+				left: -21%;
+
+				.qodef-e-image {
+					width: 144.97px !important;
+				}
+			}
+
+			@include qodefScreenSize680 {
+				left: 0;
+
+				.qodef-e-image {
+					width: auto !important;
+				}
+
+				.qodef-e-content {
+					position: relative;
+					right: 0;
+					margin-top: 15px;
+
+					.qodef-e-title {
+						margin-top: 1px !important;
+					}
+				}
+			}
+		}
+	}
+}

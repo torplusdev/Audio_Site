@@ -1,0 +1,140 @@
+/* ==========================================================================
+   Podcast Info shortcode styles
+   ========================================================================== */
+
+.qodef-podcast-player-sc {
+	
+	&.qodef-layout--info-left {
+
+		.qodef-m-player-box {
+			display: flex;
+			width: 100%;
+			align-items: center;
+			justify-content: space-between;
+			
+			.qodef-e-title {
+				line-height: 1.1em;
+				margin: 0;
+			}
+			
+			.qodef-m-box-info {
+				display: flex;
+				flex-direction: column;
+				flex: 0 0 40%;
+
+				.qodef-m-info-top {
+					display: flex;
+					margin: 30px 0 21px;
+				}
+				
+				.qodef-m-episode-number {
+					font-family: $heading-font;
+					font-size: 18px;
+					font-weight: 600;
+				}
+				
+				.qodef-m-audio-info {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					margin-left: 15px;
+
+					@include qodefScreenSize680 {
+						margin-left: 16px;
+					}
+					
+					div {
+						
+						div {
+							display: inline;
+							font-size: 14px;
+							color: #8e8b8c;
+							
+							&:not(:last-child) {
+								
+								&:after {
+									content: '•';
+								}
+							}
+						}
+					}
+					
+					.qodef-e-category {
+						color: #8e8b8c;
+
+						&:hover {
+							color: $category-hover-color;
+						}
+					}
+				}
+				
+				.qodef-e-read-more {
+					margin-top: 20px;
+				}
+			}
+			
+			.qodef-podcast-player {
+				min-height: 66px;
+				min-width: 66px;
+				display: flex;
+				align-items: center;
+				width: auto;
+				
+				.mejs-container {
+					width: 100%;
+				}
+				
+				.mejs-time,
+				.mejs-skip-back-button,
+				.mejs-jump-forward-button,
+				.mejs-time-rail,
+				.mejs-volume-button.mejs-mute {
+					display: none;
+				}
+			}
+		}
+		
+		.qodef-e-image {
+			position: relative;
+			width: auto;
+			
+			.qodef-e-episode-marker {
+				font-family: $heading-font;
+				font-weight: 600;
+				color: #f8f8f8;
+				display: block;
+				transform: rotate(-90deg);
+				position: absolute;
+				font-size: 92px;
+				top: calc(50% - 10px);
+				left: calc(-50% - 25px);
+				z-index: -1;
+			}
+			
+			img {
+				@include qodefSquareShadowStyles();
+			}
+		}
+
+		&.qodef--has-marker-appear {
+
+			.qodef-e-episode-marker {
+				opacity: 0;
+				visibility: hidden;
+				transform: translateX(5%) rotate(-90deg);
+				transition: .6s cubic-bezier(.3,.85,.41,.81);
+				will-change: transform;
+			}
+
+			&.qodef--appeared {
+
+				.qodef-e-episode-marker {
+					opacity: 1;
+					visibility: visible;
+					transform: translateX(0) rotate(-90deg);
+				}
+			}
+		}
+	}
+}
+
