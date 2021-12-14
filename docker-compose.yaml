@@ -13,6 +13,8 @@ services:
       - ./hidden_service:/root/hidden_service
       - ./tor:/usr/local/etc/tor/
       - ./ssl:/etc/ssl/torplus/
+    env_file:
+      - .env
   wp_audio:
     depends_on:
       - db_audio
