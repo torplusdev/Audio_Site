@@ -7,7 +7,7 @@ services:
     - 80:80
     - 443:443 # you can comment
     - 5037:5037
-    image: torplusserviceregistry.azurecr.io/private/ipfs_haproxy:latest 
+    image: torplusdev/production:ipfs_haproxy-latest
     volumes:
       - ./tor:/root/tor
       - ./hidden_service:/root/hidden_service
