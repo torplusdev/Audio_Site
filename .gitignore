@@ -1,1 +1,5 @@
 /ssl/*
+/logs
+/tor
+/.env
+/audio.zip
