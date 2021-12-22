@@ -1,6 +1,6 @@
 TestingTorNetwork 1
 RunAsDaemon 0
-Nickname //TODO INSERT NICKNAME
+Nickname tum332
 Address 172.22.0.4
 DataDirectory /root/tor
 PidFile /root/tor/pid

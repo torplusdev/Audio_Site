@@ -11,8 +11,18 @@
 
 1) Set seed and nickname to .env file
 
-2) For run web site run or run on daemon mode:
+2) Set ssl file to ssl folder <domain>.pem
+
+3) For run web site run or run on daemon mode:
 
     docker-compose up 
 
     docker-compose up -d # daemon mode
+
+4) login to admin 
+    https://localhost/wp-admin/
+    Login: admin
+    Password: (1SDwPHK6Ro5bZfMQZ
+
+    Plugins -> Multidomains -> Add Your domain name
+
